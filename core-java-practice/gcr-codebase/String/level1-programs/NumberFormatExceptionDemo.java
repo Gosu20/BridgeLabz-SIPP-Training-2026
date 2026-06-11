@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class NumberFormatExceptionDemo {
+
+    public static void handleException(String text) {
+
+        try {
+
+            int number = Integer.parseInt(text);
+
+            System.out.println("Number = " + number);
+
+        } catch (NumberFormatException exception) {
+
+            System.out.println("NumberFormatException Handled");
+
+        } catch (RuntimeException exception) {
+
+            System.out.println("Runtime Exception Handled");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter Text: ");
+        String text = input.nextLine();
+
+        handleException(text);
+
+        input.close();
+    }
+}
